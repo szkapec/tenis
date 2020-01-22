@@ -29,8 +29,8 @@ const liniaWidth = 6;
 const liniaHeight = 16;
 
 
-let szybkoscPilkiX = -2; //kierunki itd
-let szybkoscPilkiY = 2;
+let szybkoscPilkiX = -3; //kierunki itd
+let szybkoscPilkiY = 3;
 
 function gracz() { 
     ctx.fillStyle = "green";
@@ -60,8 +60,8 @@ function ball() {
         wyniki2.innerHTML = `Wynik: ${gr2}`;
         pilkaX = cw/2 - pilka/2;
         pilkaY = ch/2 - pilka/2;
-        szybkoscPilkiX = 1; //kierunki itd
-        szybkoscPilkiY = 2;
+        szybkoscPilkiX = 3; //kierunki itd
+        szybkoscPilkiY = 4;
     }
     if(pilkaX >= cw- pilka+20) {
         gr1++;
@@ -69,8 +69,8 @@ function ball() {
 
         pilkaX = cw/2 - pilka/2;
         pilkaY = ch/2 - pilka/2;
-        szybkoscPilkiX = 2; //kierunki itd
-        szybkoscPilkiY = 1;
+        szybkoscPilkiX = 4; //kierunki itd
+        szybkoscPilkiY = 3;
     }
 
     if(graczY < pilkaY && graczY + 100 > pilkaY && pilkaX <= 80) {
@@ -118,19 +118,19 @@ function przyspieszenie() {
 
     //predkosc x
     if(szybkoscPilkiX > 0 && szybkoscPilkiX < 16) {
-        szybkoscPilkiX += .4;
+        szybkoscPilkiX += .2;
     }
     else if (szybkoscPilkiX < 0 && szybkoscPilkiX > -16)
     {
-        szybkoscPilkiX -= .4;
+        szybkoscPilkiX -= .26;
     }
     //predkosc Y
     if(szybkoscPilkiY > 0 && szybkoscPilkiY < 16) {
-        szybkoscPilkiY += .2;
+        szybkoscPilkiY += .15;
     }
     else if (szybkoscPilkiY < 0 && szybkoscPilkiY > -16)
     {
-        szybkoscPilkiY -= .2;
+        szybkoscPilkiY -= .19;
     }
 }
 
@@ -142,29 +142,29 @@ let srodekPilki = pilkaY + pilka/2;
         
         if(srodekRakietki  - srodekPilki > 200) {
             //console.log(">+200")
-            aiY -= 10
+            aiY -= 5
         }
         else if(srodekRakietki  - srodekPilki > 50) {
             //console.log("+50-200")
-            aiY -= 15
+            aiY -= 7
         }
         else if(srodekRakietki  - srodekPilki < -200) {
             //console.log("<-200")
-            aiY += 10
+            aiY += 5
         }
         else if(srodekRakietki  - srodekPilki < -50) {
             //console.log("-50-(-200)")
-            aiY += 15
+            aiY += 7
         }
         
     }
 
     else if(pilkaX <= 500 && pilkaX > 150) {
         if(srodekRakietki  - srodekPilki > 100) {
-            aiY -= 14
+            aiY -= 5
         }
         else if (srodekRakietki  - srodekPilki < -100) {
-            aiY += 14
+            aiY +=7
         }
     }
 
